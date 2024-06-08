@@ -27,7 +27,7 @@ allExamples = concat
   [ examples (simple HUF 0.1)
              [ "0.1 forint"
              , "nulla egész egy forint"
-             , "nulla egész tized forint",
+             , "nulla egész tized forint"
              , "nulla egész egy tized forint"
              ]
   , examples (simple HUF 0.25)

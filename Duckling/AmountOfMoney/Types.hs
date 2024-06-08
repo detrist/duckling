@@ -50,6 +50,7 @@ data Currency
   | GBP
   | HKD
   | HRK
+  | HUF
   | IDR
   | ILS
   | INR
@@ -108,6 +109,7 @@ instance ToJSON Currency where
   toJSON GBP     = "GBP"
   toJSON HKD     = "HKD"
   toJSON HRK     = "HRK"
+  toJSON HUF     = "HUF"
   toJSON IDR     = "IDR"
   toJSON ILS     = "ILS"
   toJSON IQD     = "IQD"

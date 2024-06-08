@@ -34,7 +34,7 @@ ruleEgyForint = Rule
   , pattern =
     [ regex "egy ezer"
     ]
-  , prod = \_ -> Just . Token AmountOfMoney . withValue 1000 Ft currencyOnly HUF
+  , prod = \_ -> Just . Token AmountOfMoney . withValue 1000 $ currencyOnly HUF
   }
 
 ruleForint :: Rule
@@ -46,6 +46,6 @@ ruleForint = Rule
     ]
   , prod = \case
       (Token Numeral TNumeral.NumeralData{TNumeral.value = v}:_)
-        -> Just . Token AmountOfMoney . withValue (1000 * v) Ft currencyOnly HUF
+        -> Just . Token AmountOfMoney . withValue (1000 * v) $ currencyOnly HUF
       _ -> Nothing
   }

@@ -66,6 +66,9 @@ currencies = HashMap.fromList
   , ("hkd", HKD)
   , ("hrk", HRK)
   , ("idr", IDR)
+  , ("forint", HUF)
+  , ("huf", HUF)
+  , ("ft", HUF)
   , ("ils", ILS)
   , ("₪", ILS)
   , ("nis", ILS)
@@ -131,7 +134,7 @@ ruleCurrencies :: Rule
 ruleCurrencies = Rule
   { name = "currencies"
   , pattern =
-    [ regex "(aed|aud|bgn|brl|byn|¢|cad|chf|cny|c|\\$|dinars?|dkk|dollars?|egp|(e|€)uro?s?|€|gbp|gel|\x20BE|hkd|hrk|idr|ils|₪|inr|iqd|jmd|jod|¥|jpy|lari|krw|kwd|lbp|mad|₮|mnt|tugriks?|myr|rm|nis|nok|nzd|£|pkr|pln|pta?s?|qar|₽|rs\\.?|riy?als?|ron|rub|rupees?|sar|sek|sgb|shekels?|thb|ttd|₴|uah|us(d|\\$)|vnd|yen|yuan|zar|tl|lira|₺)"
+    [ regex "(aed|aud|bgn|brl|byn|¢|cad|chf|cny|c|\\$|dinars?|dkk|dollars?|egp|(e|€)uro?s?|€|gbp|gel|\x20BE|hkd|hrk|forint|huf|ft|idr|ils|₪|inr|iqd|jmd|jod|¥|jpy|lari|krw|kwd|lbp|mad|₮|mnt|tugriks?|myr|rm|nis|nok|nzd|£|pkr|pln|pta?s?|qar|₽|rs\\.?|riy?als?|ron|rub|rupees?|sar|sek|sgb|shekels?|thb|ttd|₴|uah|us(d|\\$)|vnd|yen|yuan|zar|tl|lira|₺)"
     ]
   , prod = \tokens -> case tokens of
       (Token RegexMatch (GroupMatch (match:_)):_) -> do

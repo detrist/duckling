@@ -263,6 +263,8 @@ library
                      , Duckling.AmountOfMoney.HE.Rules
                      , Duckling.AmountOfMoney.HR.Corpus
                      , Duckling.AmountOfMoney.HR.Rules
+                     , Duckling.AmountOfMoney.HU.Corpus
+                     , Duckling.AmountOfMoney.HU.Rules
                      , Duckling.AmountOfMoney.ID.Corpus
                      , Duckling.AmountOfMoney.ID.Rules
                      , Duckling.AmountOfMoney.IT.Rules

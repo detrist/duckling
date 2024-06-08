@@ -193,7 +193,7 @@ allExamples = concat
              , "250 ezer forint"
              , "kettő száz ötven ezer forint"
              , "két száz ötven ezer forint"
-             , "két és fél száz ezer forint",
+             , "két és fél száz ezer forint"
              , "negyed millió forint"
              ]
   , examples (simple HUF 251000)

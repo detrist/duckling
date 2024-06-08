@@ -49,3 +49,9 @@ ruleForint = Rule
         -> Just . Token AmountOfMoney . withValue (1000 * v) $ currencyOnly HUF
       _ -> Nothing
   }
+
+rules :: [Rule]
+rules =
+  [ ruleEgyForint
+  , ruleForint
+  ]

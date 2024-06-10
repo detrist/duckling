@@ -157,6 +157,8 @@ instance TextShow (Dimension a) where
 instance TextShow (Seal Dimension) where
   showb (Seal d) = showb d
 
+instance Eq (Dimension a)
+
 -- Hashable
 instance Hashable (Seal Dimension) where
   hashWithSalt s (Seal a) = hashWithSalt s a

@@ -1,0 +1,37 @@
+cradle:
+  cabal:
+    - path: "./"
+      component: "lib:duckling"
+
+    - path: "tests"
+      component: "duckling:test:duckling-test"
+
+    - path: "exe/RegenMain.hs"
+      component: "duckling:exe:duckling-regen-exe"
+
+    - path: "exe/Duckling/Ranking/Train.hs"
+      component: "duckling:exe:duckling-regen-exe"
+
+    - path: "exe/Duckling/Ranking/Generate.hs"
+      component: "duckling:exe:duckling-regen-exe"
+
+    - path: "exe/ExampleMain.hs"
+      component: "duckling:exe:duckling-example-exe"
+
+    - path: "exe/Duckling/Data/TimeZone.hs"
+      component: "duckling:exe:duckling-example-exe"
+
+    - path: "exe/CustomDimensionExample.hs"
+      component: "duckling:exe:custom-dimension-example"
+
+    - path: "exe/DucklingRequestSample.hs"
+      component: "duckling:exe:duckling-request-sample"
+
+    - path: "exe/Duckling/Data/TimeZone.hs"
+      component: "duckling:exe:duckling-request-sample"
+
+    - path: "exe/DucklingExpensive.hs"
+      component: "duckling:exe:duckling-expensive"
+
+    - path: "exe/Duckling/Data/TimeZone.hs"
+      component: "duckling:exe:duckling-expensive"

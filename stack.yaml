@@ -1,12 +1,13 @@
-resolver: lts-16.31
+resolver: lts-21.25
 
 packages:
 - '.'
 
 extra-deps:
-- regex-posix-clib-2.7
-- dependent-sum-0.7.1.0@sha256:0e419237f5b86da3659772afff9cab355c0f8d5b3fdb15a5b30e673d8dc83941,2147
-- constraints-extras-0.3.1.0@sha256:c70fcf437e1d640cfd50a8eda1db47a64e49c96857e08fd0d8c438327d908ac1,1846
+- regex-posix-clib-2.7@sha256:998fca06da3d719818f0691ef0b8b9b7375afeea228cb08bd9e2db53f96b0cd7,1232
+- dependent-sum-0.7.2.0@sha256:f1060345439b6949eae5a6b3cdb35c7189ff360f7b4d5fa617e4f1e0f847c424,2148
+- constraints-0.14.2@sha256:904aae6005cfc738844d78a45dbcc520e0ac4e196623d2640391cc91829eb493,2275
+- snap-server-1.1.2.1@sha256:01eaf773af9594067c96b3144c84f1f97f0d5fb6520e5d48382572d2607b010a,15466
 
 flags:
   regex-posix:

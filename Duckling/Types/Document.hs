@@ -276,8 +276,8 @@ byteStringFromPos
   rangeToText :: (Int, Int) -> Text
   rangeToText (-1, _) = ""
   -- this is what regexec from Text.Regex.PCRE.ByteString does
-  rangeToText r = UText.takeWord16 (end16Pos - start16Pos) $
-    UText.dropWord16 start16Pos rawInput
+  rangeToText r = UText.takeWord8 (end16Pos - start16Pos) $
+    UText.dropWord8 start16Pos rawInput
     where
     start16Pos = tDropToUtf16Drop Array.! startPos
     end16Pos = tDropToUtf16Drop Array.! endPos

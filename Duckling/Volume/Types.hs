@@ -16,13 +16,13 @@ module Duckling.Volume.Types where
 
 import Control.DeepSeq
 import Data.Aeson
+import qualified Data.Aeson.KeyMap as KM
 import Data.Hashable
 import Data.Text (Text)
 import GHC.Generics
 import Prelude
 import Duckling.Resolve (Resolve (..))
 import qualified Data.Text as Text
-import qualified Data.HashMap.Strict as H
 
 data Unit
   = Gallon
@@ -81,8 +81,8 @@ data VolumeValue
 
 instance ToJSON VolumeValue where
   toJSON (SimpleValue value) = case toJSON value of
-    Object o -> Object $ H.insert "type" (toJSON ("value" :: Text)) o
-    _ -> Object H.empty
+    Object o -> Object $ KM.insert "type" (toJSON ("value" :: Text)) o
+    _ -> Object KM.empty
   toJSON (IntervalValue (from, to)) = object
     [ "type" .= ("interval" :: Text)
     , "from" .= toJSON from

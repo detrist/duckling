@@ -16,6 +16,7 @@ module Duckling.Duration.Types where
 
 import Control.DeepSeq
 import Data.Aeson
+import qualified Data.Aeson.Key as Key
 import Data.Hashable
 import Data.Semigroup
 import Data.Text (Text)
@@ -48,7 +49,7 @@ instance ToJSON DurationData where
     [ "type"       .= ("value" :: Text)
     , "value"      .= value
     , "unit"       .= grain
-    , showt grain  .= value
+    , Key.fromText (showt grain) .= value
     , "normalized" .= object
       [ "unit"  .= ("second" :: Text)
       , "value" .= inSeconds grain value

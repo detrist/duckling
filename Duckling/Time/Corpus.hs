@@ -18,7 +18,7 @@ module Duckling.Time.Corpus
   ) where
 
 import Data.Aeson
-import qualified Data.HashMap.Strict as H
+import qualified Data.Aeson.KeyMap as KM
 import Data.Text (Text)
 import qualified Data.Time.LocalTime.TimeZone.Series as Series
 import Prelude
@@ -71,8 +71,8 @@ check f context Resolved{rval = RVal _ v} = case toJSON v of
   _ -> False
   where
     deleteValues :: Value -> Value
-    deleteValues (Object o) = Object $ H.delete "values" o
-    deleteValues _ = Object H.empty
+    deleteValues (Object o) = Object $ KM.delete "values" o
+    deleteValues _ = Object KM.empty
 
 examples :: ToJSON a => (Context -> a) -> [Text] -> [Example]
 examples f = examplesCustom (check f)

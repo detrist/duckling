@@ -21,6 +21,7 @@
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE TypeOperators #-}
 {-# LANGUAGE NamedFieldPuns #-}
+{-# LANGUAGE UndecidableInstances #-}
 
 module Duckling.Types where
 
@@ -160,7 +161,9 @@ instance TextShow (Seal Dimension) where
 -- Hashable
 instance Hashable (Seal Dimension) where
   hashWithSalt s (Seal a) = hashWithSalt s a
-instance Hashable (Dimension a) where
+instance Eq (Dimension a) where
+  (==) = (==)
+instance (Eq (Dimension a)) => Hashable (Dimension a) where
   hashWithSalt s RegexMatch          = hashWithSalt s (0::Int)
   hashWithSalt s Distance            = hashWithSalt s (1::Int)
   hashWithSalt s Duration            = hashWithSalt s (2::Int)
